@@ -1,0 +1,14 @@
+server:
+  port: 7001
+
+#Eureka配置
+eureka:
+  instanve:
+    hostname: eureka7001.com #Eureka服务端的实例名称
+  client:
+    register-with-eureka: false #表示是否想euraka注册中心注册自己
+    fetch-registry: false #fetch-registry如果为false，则表示自己为注册中心
+    service-url: #监控页面
+#      defaultZone: http://${eureka.instanve.hostname}:${server.port}/eureka/
+    #关联集群
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
